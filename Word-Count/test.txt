@@ -1,0 +1,5 @@
+	this document have
+50 character
+and 13 word,
+{	//and 5 line.
+}
