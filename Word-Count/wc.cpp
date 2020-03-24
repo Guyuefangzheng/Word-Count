@@ -147,41 +147,22 @@ int MoreLine(char *file){	//返回更复杂的数据（代码行 / 空行 / 注释行）
 int main(int argc,char *argv[]){
 	clock_t start_t,finish_t;
 	double Total_time;
-	if(!strcmp(argv[1],"-c")){
-		start_t = clock();
+	start_t = clock();
+	if(!strcmp(argv[1],"-c"))
 		printf("charnumber: %d\n",CharCount(argv[2]));
-		finish_t = clock();
-		Total_time = (double)(finish_t - start_t) / CLOCKS_PER_SEC;//将时间转换为秒
-		printf("%f seconds\n",Total_time);
-	}
-	else if(!strcmp(argv[1],"-w")){
-		start_t = clock();
+	else if(!strcmp(argv[1],"-w"))
 		printf("wordnumber: %d\n",WordCount(argv[2]));
-		finish_t = clock();
-		Total_time = (double)(finish_t - start_t) / CLOCKS_PER_SEC;//将时间转换为秒
-		printf("%f seconds\n",Total_time);
-	}	
-	else if(!strcmp(argv[1],"-l")){
-		start_t = clock();
+	else if(!strcmp(argv[1],"-l"))
 		printf("linenumber: %d\n",LineCount(argv[2]));
-		finish_t = clock();
-		Total_time = (double)(finish_t - start_t) / CLOCKS_PER_SEC;//将时间转换为秒
-		printf("%f seconds\n",Total_time);
-	}
-	else if(!strcmp(argv[1],"-s")){
-		start_t = clock();
+	else if(!strcmp(argv[1],"-s"))
 		printf("find txt number: %d\n",SearchFile());
-		finish_t = clock();
-		Total_time = (double)(finish_t - start_t) / CLOCKS_PER_SEC;//将时间转换为秒
-		printf("%f seconds\n",Total_time);
-	}
-	else if(!strcmp(argv[1],"-a")){
-		start_t = clock();
+	else if(!strcmp(argv[1],"-a"))
 		MoreLine(argv[2]);
-		finish_t = clock();
+	else{ 
+		printf("请输入正确的指令！\n");
+		exit(1);
+	}
+	finish_t = clock();
 		Total_time = (double)(finish_t - start_t) / CLOCKS_PER_SEC;//将时间转换为秒
 		printf("%f seconds\n",Total_time);
-	}
-	else
-		printf("请输入正确的指令！\n");
 }
