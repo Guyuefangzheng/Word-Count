@@ -163,6 +163,6 @@ int main(int argc,char *argv[]){
 		exit(1);
 	}
 	finish_t = clock();
-		Total_time = (double)(finish_t - start_t) / CLOCKS_PER_SEC;//将时间转换为秒
-		printf("%f seconds\n",Total_time);
+	Total_time = (double)(finish_t - start_t) / CLOCKS_PER_SEC;//将时间转换为秒
+	printf("%f seconds\n",Total_time);
 }
